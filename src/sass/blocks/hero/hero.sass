@@ -1,25 +1,33 @@
 .hero
   position: relative
-  padding: 200px 0 215px
+  padding: 200px 0 140px
   background:
     color: #f5f5f5
     repeat: no-repeat
     position: center
     size: cover
   +r(1200)
-    padding: 150px 0 160px
-  +r(767)
+    padding: 150px 0 140px
+  +r(992)
     padding: 130px 0 70px
+    background-position: right center
   +r(480)
     padding-top: 100px
-    background-position: right center
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 200px
+    background-image: linear-gradient(0, rgba(#fff, 1) 5%, rgba(#fff, 0))
+    pointer-events: none
   .container
     position: relative
     height: 100%
   &__content
-    max-width: 530px
     font-size: 20px
-    +r(767)
+    +r(992)
       text-align: center
     +r(576)
       font-size: 16px
@@ -41,41 +49,31 @@
           height: 2px
           margin-top: -1px
           background-color: $light-accent
-          +r(767)
+          +r(992)
             display: none
     h3
       &::after
         content: ''
         display: block
-        width: 100px
+        width: 120px
         height: 2px
+        margin: 20px 0 10px
         background-color: $accent
-    .btn-wrap
-      margin-top: 50px
-      +r(767)
-        justify-content: center
+        +r(992)
+          margin: 20px auto 10px
   &__video
-    position: absolute
-    top: 0
-    right: 70px
-    +r(1200)
-      right: 0
+    margin-top: 40px
+    margin-bottom: 80px
     +r(992)
-      top: 80px
-      right: 15px
-    +r(767)
-      position: static
-      margin-top: 50px
-    img
-      +r(992)
-        display: none
+      margin-bottom: 50px
+    +r(576)
+      margin: 20px 0 30px
     &-btn
-      position: absolute
+      position: relative
       z-index: 1
-      top: 25%
-      left: 45%
       width: 96px
       height: 96px
+      margin: 0 auto
       border-radius: 50%
       background-color: $accent
       font-size: 12px
@@ -120,6 +118,38 @@
         height: 44px
         fill: #fff
         opacity: 0.2
+  &__calendar
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    font-size: 16px
+    font-weight: 500
+    color: #000
+    line-height: 1.25
+    +r(992)
+      justify-content: center
+      text-align: left
+    &-icon
+      width: 48px
+      height: 48px
+      margin-right: 15px
+      fill: $accent
+    &-wrap
+      +r(992)
+        text-align: center
+      h4
+        margin-bottom: 20px
+        font-family: $main-font
+        font-size: 16px
+        font-weight: 400
+        span
+          font-size: 20px
+          font-weight: 700
+          color: $accent
+      .btn-wrap
+        margin-top: 20px
+        +r(992)
+          justify-content: center
 
 .hero-scroll
   position: absolute

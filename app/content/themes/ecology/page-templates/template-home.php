@@ -16,23 +16,44 @@
 
         <section class="hero" style="background-image: url(<?php echo THEME_URL; ?>/images/general/hero.jpg);">
           <div class="container">
-            <div class="hero__content">
-              <?php the_sub_field('content'); ?>
 
-              <div class="hero__video">
-                <img src="<?php echo THEME_URL; ?>/images/general/hero-video.png" alt="">
-                <a href="<?php echo esc_url(get_sub_field('link_video')); ?>" class="hero__video-btn" data-fancybox>
-                  <?php hv_the_icon('play', 'hero__video-btn-icon'); ?>
-                  <span>Узнать все за 120 сек.</span>
-                </a>
+            <div class="row">
+
+              <div class="col-lg-7 col-xl-6">
+                <div class="hero__content">
+                  <?php the_sub_field('content'); ?>
+                </div>
               </div>
 
-              <div class="btn-wrap">
-                <a href="#" class="btn callback_open">Узнать больше</a>
-                <span class="btn-descr">Нажмите кнопку, <br>чтобы узнать больше</span>
+              <div class="col-lg-5 col-xl-6">
+                <div class="hero__video">
+                  <a href="<?php echo esc_url(get_sub_field('link_video')); ?>" class="hero__video-btn" data-fancybox>
+                    <?php hv_the_icon('play', 'hero__video-btn-icon'); ?>
+                    <span>Узнать все <br>за 120 сек.</span>
+                  </a>
+                </div>
+
+                <div class="hero__calendar-wrap">
+                  <h4><span>Хотите избежать штрафов?</span> <br>Сдавайте отчетность вовремя</h4>
+
+                  <p class="hero__calendar">
+                    <?php hv_the_icon('calendar', 'hero__calendar-icon'); ?>
+                    Персональный календарь <br>отчетности
+                  </p>
+
+                  <?php if (get_sub_field('link_calendar')): ?>
+                    <div class="btn-wrap">
+                      <a href="<?php echo esc_url(get_sub_field('link_calendar')); ?>" class="btn" target="_blank">Скачать Бесплатно</a>
+                      <span class="btn-descr">Нажмите кнопку, чтобы БЕСПЛАТНО <br>скачать календарь экологической <br>отчетности</span>
+                    </div>
+                  <?php endif; ?>
+                </div>
+
               </div>
 
             </div>
+
+
             <span class="hero-scroll">Листайте вниз</span>
           </div>
         </section>

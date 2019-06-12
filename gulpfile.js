@@ -1,7 +1,7 @@
 "use strict";
 
 global.$ = {
-  url: 'ecology.loc',
+  url: 'ecology2.loc',
   path: {
     task: require('./gulp/path/tasks.js'),
     source: 'src/',
