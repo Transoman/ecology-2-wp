@@ -1,0 +1,83 @@
+.advantages
+  margin-bottom: 30px
+  &:last-child
+    .advantages
+      &__icon-wrap
+        &::after
+          display: none
+  +r(1200)
+    &:nth-child(3)
+      .advantages
+        &__icon-wrap
+          &::after
+            display: none
+  +r(992)
+    &:nth-child(2)
+      .advantages
+        &__icon-wrap
+          &::after
+            display: none
+    &:nth-child(3)
+      .advantages
+        &__icon-wrap
+          &::after
+            display: block
+            +r(767)
+              display: none
+  +r(767)
+    text-align: center
+  &__icon
+    width: 70px
+    height: 70px
+    fill: $main-color
+    &-wrap
+      position: relative
+      z-index: 1
+      padding-left: 20px
+      margin-bottom: 30px
+      +r(767)
+        margin: 0 auto 20px
+        width: 70px
+        padding: 0
+      &::before
+        content: ''
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 50px
+        width: 60px
+        height: 60px
+        border-radius: 6px
+        background-color: $bg-color
+        +r(767)
+          left: 30px
+      &::after
+        content: ''
+        position: absolute
+        top: 35px
+        left: 100px
+        width: 200px
+        height: 2px
+        border-bottom: 2px dashed #e1f0e1
+        +r(767)
+          display: none
+  &__number
+    position: absolute
+    left: 110px
+    bottom: 0
+    font-weight: 700
+    font-style: italic
+    color: #606660
+    line-height: 1
+    +r(767)
+      left: 90px
+  &__title
+    font-size: 18px
+    color: $accent
+    +r(767)
+      font-size: 16px
+
+.s-advantages
+  padding-bottom: 20px
+  +r(767)
+    padding-bottom: 0

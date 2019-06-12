@@ -1,0 +1,86 @@
+.services
+  background-color: $bg-color
+  .btn-wrap
+    justify-content: flex-end
+    padding-right: 50px
+    +r(992)
+      justify-content: center
+      padding-right: 0
+
+.services-tabs
+  margin-bottom: 20px
+  &__list
+    margin: 0 0 60px
+    padding: 0
+    list-style: none
+    display: flex
+    border-bottom: 1px solid #f0f0f0
+    +r(767)
+      display: block
+      border-bottom: 0
+      margin-bottom: 40px
+    li
+      position: relative
+      width: 33.33%
+      text-align: center
+      +r(767)
+        width: 100%
+        border-bottom: 1px solid #f0f0f0
+      &::before
+        content: ''
+        position: absolute
+        bottom: -1px
+        left: 0
+        right: 0
+        height: 4px
+        border-radius: 3px 3px 0 0
+        background-color: $accent
+        opacity: 0
+        visibility: hidden
+        +trans
+      &.active
+        &::before
+          opacity: 1
+          visibility: visible
+    a
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 100%
+      padding: 10px 15px
+      font-size: 16px
+      font-weight: 500
+      color: $accent
+      +r(992)
+        font-size: 14px
+      +r(767)
+        padding: 10px 0
+      &:hover
+        color: $orange
+  &__wrap
+    position: relative
+    padding-left: 25px
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    +r(992)
+      padding-left: 0
+    +r(480)
+      display: block
+      padding-top: 50px
+      text-align: center
+    p
+      margin: 0
+  &__icon
+    width: 70px
+    height: 70px
+    margin-right: 45px
+    +r(992)
+      margin-right: 20px
+    +r(480)
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 40px
+      height: 40px

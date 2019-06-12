@@ -1,0 +1,46 @@
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 10
+  +trans
+  &.fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    background-color: #fff
+    box-shadow: 0 0 10px rgba(#000, 0.1)
+    .header__top
+      padding: 10px 0
+  &__top
+    padding: 25px 0
+    +r(767)
+      padding: 10px 0
+    .container
+      position: relative
+      display: flex
+      align-items: center
+  &__phone
+    margin-left: auto
+    +r(1200)
+      margin-right: 50px
+    +r(767)
+      text-align: right
+      .phone__descr
+        display: none
+    +r(480)
+      margin-right: 40px
+      .phone
+        &__tel
+          font-size: 14px
+  &__bottom
+    +trans
+    &.fixed
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      background-color: #fff
+      box-shadow: 0 0 10px rgba(#000, 0.1)

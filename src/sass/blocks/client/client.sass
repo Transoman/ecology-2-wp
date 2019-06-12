@@ -1,0 +1,51 @@
+.client
+  &__wrap
+    max-width: 970px
+    margin: 0 auto
+  &__item
+    position: relative
+    background:
+      color: $bg-color
+      image: url(images/general/pattern.svg)
+      position: center
+      size: contain
+    border-radius: 6px
+    overflow: hidden
+    +trans
+    +r(992)
+      margin-bottom: 30px
+    &:hover
+      background-color: $accent
+      box-shadow: 0 12px 60px rgba(#000, 0.1)
+      .client
+        &__item
+          &-title
+            color: #fff
+          &-subtitle
+            color: #19334c
+    img
+      +r(480)
+        max-width: 160px
+    &-content
+      position: absolute
+      right: 25px
+      bottom: 15px
+      text-align: right
+      +r(480)
+        right: 10px
+        bottom: 10px
+    &-title
+      margin: 0
+      font-size: 24px
+      font-weight: 900
+      text-transform: uppercase
+      line-height: 1
+      +trans
+      +r(480)
+        font-size: 18px
+    &-subtitle
+      font-weight: 500
+      text-transform: uppercase
+      +trans
+      +r(480)
+        font-size: 10px

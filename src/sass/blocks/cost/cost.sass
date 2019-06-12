@@ -1,0 +1,40 @@
+.cost
+  &__content
+    +r(992)
+      margin-bottom: 50px
+  &__item
+    position: relative
+    padding-left: 100px
+    padding-top: 10px
+    +r(992)
+      br
+        display: none
+    +r(480)
+      padding-top: 70px
+      padding-left: 0
+      text-align: center
+  &__icon
+    width: 36px
+    height: 36px
+    fill: $accent
+    &-wrap
+      position: absolute
+      top: 0
+      left: 0
+      width: 70px
+      height: 70px
+      border-radius: 50%
+      background-color: $bg-color
+      display: flex
+      align-items: center
+      justify-content: center
+      +r(480)
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 60px
+        height: 60px
+  &__title
+    font-size: 18px
+    +r(767)
+      font-size: 16px
