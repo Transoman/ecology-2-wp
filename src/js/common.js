@@ -143,6 +143,88 @@ jQuery(document).ready(function($) {
       IMask(el, maskOptions);
     });
   }
+  
+  // Quize test
+  var startTest = function() {
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    $('.steps__btn--prev').click( function(e) {
+      e.preventDefault();
+      nextPrev(-1);
+    } );
+
+    $('.steps__btn--next').click( function(e) {
+      e.preventDefault();
+
+      if ( (currentTab + 1) >  $('.steps__item').length - 1  ) {
+        return false;
+      }
+
+      nextPrev(1);
+    } );
+
+    function showTab(n) {
+      // This function will display the specified tab of the form ...
+      var x = $('.steps__item');
+      x.hide();
+
+      var countStep = x.length;
+      var currentStep = n + 1;
+
+      $('.test-progress__count').text(Math.floor((100 / countStep) * currentStep) + '%');
+      $('.test-progress__line').css({
+        width: Math.floor((100 / countStep) * currentStep) + '%'
+      });
+
+      console.log($(x[n]).find('input[type="radio"]:checked'));
+
+      if ($(x[n]).find('input[type="radio"]:checked').length === 0) {
+        $('.steps__btn--next').attr('disabled', true);
+      }
+      else {
+        $('.steps__btn--next').attr('disabled', false);
+      }
+
+      $(x[n]).css('display', 'block');
+      // ... and fix the Previous/Next buttons:
+      if (n == 0) {
+        $('.steps__btn--prev').css('display', 'none');
+      } else {
+        $('.steps__btn--prev').css('display', 'inline');
+      }
+      if (n == (x.length - 1)) {
+        $('.steps__btn--next').css('display', 'none');
+      } else {
+        $('.steps__btn--next').css('display', 'inline');
+      }
+    }
+
+    function nextPrev(n) {
+
+      // This function will figure out which tab to display
+      var x = $('.steps__item');
+
+      // Hide the current tab:
+      $(x[currentTab]).css('display', 'none');
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form... :
+      if (currentTab >= x.length) {
+        //...the form gets submitted:
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+
+    $('.test-form__label').click(function() {
+      $('.steps__btn--next').attr('disabled', false);
+    });
+
+  };
+
+  startTest();
 
   // SVG
   svg4everybody({});

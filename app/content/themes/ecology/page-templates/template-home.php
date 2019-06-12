@@ -73,15 +73,15 @@
 
 <section class="client">
   <div class="container">
-    <h2 class="section-title">Для кого мы работаем</h2>
+    <h2 class="section-title">По степени воздействия на окружающую среду Горнодобывающие предприятия делятся на 2 категории</h2>
     <div class="client__wrap">
       <div class="row">
         <div class="col-lg-6">
           <div class="client__item">
             <img src="<?php echo THEME_URL; ?>/images/content/client-1.png" alt="">
             <div class="client__item-content">
-              <p class="client__item-title">Рудные</p>
-              <span class="client__item-subtitle">месторождения</span>
+              <p class="client__item-title">Объекты I категории</p>
+              <span class="client__item-subtitle">объекты, оказывающие значительное негативное воздействие на окружающую среду</span>
             </div>
           </div>
         </div>
@@ -89,12 +89,17 @@
           <div class="client__item">
             <img src="<?php echo THEME_URL; ?>/images/content/client-2.png" alt="">
             <div class="client__item-content">
-              <p class="client__item-title">Россыпные</p>
-              <span class="client__item-subtitle">месторождения</span>
+              <p class="client__item-title">объекты II категории</p>
+              <span class="client__item-subtitle">объекты,оказывающие умеренное негативное воздействие на окружающую среду</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="#" class="btn">Пройти тест</a>
+      <span class="btn-descr">Нажмите кнопку, <br>чтобы узнать свою категорию</span>
     </div>
   </div>
   <!-- /.container -->

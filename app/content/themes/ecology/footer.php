@@ -13,6 +13,8 @@
   <?php echo do_shortcode('[contact-form-7 id="66" title="Форма вопросов"]'); ?>
 </div>
 
+<?php get_template_part('template-parts/test'); ?>
+
 <?php wp_footer(); ?>
 
 </body>
