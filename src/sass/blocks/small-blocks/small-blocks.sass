@@ -18,6 +18,19 @@
     margin-top: 20px
     text-align: center
 
+.big
+  font-size: 24px
+  span
+    font-size: 30px
+    font-weight: 700
+  &--red
+    color: #fd5052
+  &--green
+    color: $accent
+  &--sm
+    font-size: 16px
+    font-weight: 500
+
 .swiper-btn-wrap
   position: relative
   display: flex
@@ -60,3 +73,10 @@
 .swiper-button-next
   svg
     margin-left: 5px
+
+.eco-control
+  padding-top: 90px
+  +r(767)
+    padding-bottom: 0
+  .banner-form--list
+    margin-bottom: 0

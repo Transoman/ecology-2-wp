@@ -1,0 +1,48 @@
+.we-can
+  padding-top: 20px
+  padding-bottom: 0
+  &__wrap
+    padding: 0 100px
+    +r(1200)
+      padding: 0
+  &__item
+    height: calc(100% - 30px)
+    margin-bottom: 30px
+    padding: 55px 50px 40px
+    background: $bg-color url('images/general/pattern.svg') center / 100% auto
+    border-radius: 6px
+    text-align: center
+    font-weight: 500
+    +trans
+    +r(480)
+      padding: 20px 15px
+    &:hover
+      background-color: $accent
+      box-shadow: 0 12px 60px rgba(#000, 0.1)
+      p
+        color: #325c29
+      .we-can
+        &__icon-wrap
+          svg
+            fill: #fff
+        &__title
+          color: #fff
+    p
+      +trans
+  &__icon-wrap
+    margin-bottom: 20px
+    svg
+      width: 100px
+      height: 100px
+      fill: $accent
+      +trans
+      +r(480)
+        width: 50px
+        height: 50px
+  &__title
+    font-size: 24px
+    font-weight: 900
+    text-transform: uppercase
+    +trans
+    +r(480)
+      font-size: 18px

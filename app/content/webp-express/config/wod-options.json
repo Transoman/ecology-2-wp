@@ -1,26 +1,68 @@
 {
-    "destination-folder": "separate",
-    "destination-extension": "append",
-    "forward-query-string": true,
-    "converters": [
-        {
-            "converter": "gd",
-            "options": {
-                "skip-pngs": false
-            }
-        }
-    ],
-    "metadata": "none",
-    "fail": "original",
-    "success-response": "converted",
-    "base-htaccess-on-these-capability-tests": {
-        "passThroughHeaderWorking": true,
-        "passThroughEnvWorking": true,
-        "modHeaderWorking": true
+    "wod": {
+        "enable-redirection-to-converter": true,
+        "enable-redirection-to-webp-realizer": true,
+        "base-htaccess-on-these-capability-tests": {
+            "passThroughHeaderWorking": true,
+            "passThroughEnvWorking": true,
+            "modHeaderWorking": true
+        },
+        "destination-extension": "append",
+        "destination-folder": "separate",
+        "forward-query-string": true,
+        "paths": {
+            "uploadDirRel": "app/content/uploads"
+        },
+        "success-response": "converted"
     },
-    "cache-control-header": "",
-    "quality": 70,
-    "paths": {
-        "uploadDirRel": "app/content/uploads"
+    "webp-convert": {
+        "serve-image": {
+            "headers": {
+                "cache-control": false,
+                "content-length": true,
+                "content-type": true,
+                "expires": false,
+                "last-modified": true
+            }
+        },
+        "fail": "original",
+        "convert": {
+            "converters": [
+                {
+                    "converter": "vips",
+                    "options": {
+                        "smart-subsample": false,
+                        "preset": "none"
+                    }
+                },
+                {
+                    "converter": "gd",
+                    "options": {
+                        "png": {
+                            "skip": false
+                        }
+                    }
+                },
+                {
+                    "converter": "graphicsmagick",
+                    "options": {
+                        "use-nice": true
+                    }
+                }
+            ],
+            "jpeg": {
+                "encoding": "auto",
+                "quality": 70,
+                "near-lossless": 60
+            },
+            "png": {
+                "encoding": "auto",
+                "quality": 85,
+                "near-lossless": 60,
+                "alpha-quality": 80
+            },
+            "metadata": "none",
+            "log-call-arguments": true
+        }
     }
 }

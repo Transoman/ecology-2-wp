@@ -98,7 +98,7 @@
     </div>
 
     <div class="btn-wrap">
-      <a href="#" class="btn">Пройти тест</a>
+      <a href="#" class="btn test_open">Пройти тест</a>
       <span class="btn-descr">Нажмите кнопку, <br>чтобы узнать свою категорию</span>
     </div>
   </div>
@@ -106,12 +106,30 @@
 </section>
 <!-- /.client -->
 
+<div class="container">
+  <div class="banner-form banner-form--mb120">
+    <div class="banner-form__content">
+      <blockquote>
+        <?php hv_the_icon('auction'); ?>
+        <p>Невыполнение или несвоевременное выполнение обязанности по подаче заявки на постановку на государственный учет объектов, оказывающих негативное воздействие на окружающую среду</p>
+      </blockquote>
+
+      <div class="banner-form__content-row">
+        <p class="banner-form__content-fine">Штраф <span>100 000</span> рублей</p>
+        <span class="banner-form__content-article">КоАП РФ Статья 8.46.</span>
+      </div>
+    </div>
+
+    <div class="banner-form__form">
+      <?php echo do_shortcode('[contact-form-7 id="91" title="Форма консультация"]'); ?>
+    </div>
+  </div>
+</div>
+
 <?php
 
-  // check if the flexible content field has rows of data
   if( have_rows('home_layout') ):
 
-    // loop through the rows of data
     while ( have_rows('home_layout') ) : the_row();
 
       if( get_row_layout() == 'services' ): ?>
@@ -139,7 +157,7 @@
                     <?php if (have_rows('list_item')): ?>
                       <div class="row">
                         <?php while (have_rows('list_item')): the_row(); ?>
-                          <div class="col-md-6">
+                          <div class="col-md-6 col-lg-4">
                             <div class="services-tabs__wrap">
                               <?php echo wp_get_attachment_image(get_sub_field('icon'), 'thumbnail', false, array('class' => 'services-tabs__icon')); ?>
                               <p><?php the_sub_field('text'); ?></p>
@@ -152,11 +170,6 @@
                 <?php endwhile; ?>
               </div>
             <?php endif; ?>
-
-            <div class="btn-wrap">
-              <a href="#" class="btn callback_open">Узнать больше</a>
-              <span class="btn-descr">Нажмите кнопку, <br>чтобы узнать больше</span>
-            </div>
 
           </div>
           <!-- /.container -->
@@ -175,6 +188,435 @@
   endif;
 
 ?>
+
+<section class="for-client">
+  <div class="container">
+    <h2 class="section-title">Комплексное экологическое разрешение (КЭР)</h2>
+
+    <div class="row">
+
+      <div class="col-xl-4">
+        <p class="for-client__title">Для кого:</p>
+
+        <div class="for-client__img-wrap">
+          <img src="<?php echo THEME_URL; ?>/images/content/for-client-1.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="col-xl-8">
+
+        <p class="for-client__title for-client__title--short">Комплексное экологическое разрешение <br>КЭР содержит:</p>
+
+        <div class="for-client__wrap">
+          <div class="blocks blocks--1">
+            <div class="blocks__item is-active" style="top: 0; z-index: 5;"></div>
+            <div class="blocks__item" style="top: 30px; z-index: 4;"></div>
+            <div class="blocks__item" style="top: 60px; z-index: 3;"></div>
+            <div class="blocks__item" style="top: 90px; z-index: 2;"></div>
+            <div class="blocks__item" style="top: 120px; z-index: 1;"></div>
+            <div class="blocks__item" style="top: 150px; z-index: 0;"></div>
+          </div>
+
+          <div class="for-client-slider swiper-container">
+            <div class="swiper-wrapper">
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Технологические нормативы</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Нормативы допустимых выбросов (далее – НДВ), сбросов (НДС)</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Нормативы допустимых физических воздействий</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Нормативы образования отходов и лимиты на их размещение</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Требования к обращению с отходами производства и потребления</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Согласованную программу производственного экологического контроля</p>
+              </div>
+            </div>
+            <div class="swiper-btn-wrap">
+              <div class="swiper-button-prev">
+                <?php hv_the_icon('arrow-left'); ?>
+                Назад
+              </div>
+              <div class="swiper-button-next">
+                Далле
+                <?php hv_the_icon('arrow-right'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+  <div class="download-banner">
+    <img src="<?php echo THEME_URL; ?>/images/general/pdf.png" alt="" class="download-banner__icon">
+    <p class="download-banner__text">Нажмите кнопку, чтобы БЕСПЛАТНО  скачать инструкцию</p>
+    <a href="<?php the_field('instruction', 'option'); ?>" class="btn" target="_blank" download>Скачать Инструкцию</a>
+  </div>
+</div>
+
+<section class="info">
+  <div class="container">
+    <h2 class="section-title">Ответственность за отсутствие комплексного <br>экологического разрешения</h2>
+    <div class="row">
+      <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 offset-xl-2">
+        <div class="info-card">
+          <h3 class="info-card__title">без разрешения</h3>
+          <ul class="info-card__list">
+            <li>Штраф 100 000 рублей</li>
+            <li>плата НВОС без разрешения: <br>Ежегодно 2 125 000 рублей</li>
+          </ul>
+
+          <div class="info-card__total">
+            <span>итого:</span>
+            <p>2 225 000 рублей</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-lg-5 col-md-6">
+        <div class="info-card info-card--green">
+          <h3 class="info-card__title">С разрешением</h3>
+          <ul class="info-card__list">
+            <li>Штраф отсуствует</li>
+            <li>плата НВОС с разрешением: <br>Ежегодно 80 000 рублей</li>
+          </ul>
+
+          <div class="info-card__total">
+            <span>итого:</span>
+            <p>80 000 рублей</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-form banner-form--list">
+      <div class="banner-form__content">
+        <img src="<?php echo THEME_URL; ?>/images/general/doc.png" alt="">
+        <h3>Необходимо оформить КЭР?</h3>
+        <p>Нажмите кнопку что бы бесплатно получить консультацию об услуге и мы расскажем:</p>
+        <ul>
+          <li>Какую документацию необходимо разработать что бы  оформить КЭР ?</li>
+          <li>Какие есть подводные камни в оформлении КЭР?</li>
+          <li>Сколько будет стоить наша услуга по оформлению КЭР?</li>
+        </ul>
+      </div>
+
+      <div class="banner-form__form">
+        <?php echo do_shortcode('[contact-form-7 id="91" title="Форма консультация"]'); ?>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="for-client">
+  <div class="container">
+    <h2 class="section-title">Декларация о воздействии на окружающую среду <br>(ДВОС)</h2>
+
+    <div class="row">
+
+      <div class="col-xl-4">
+        <p class="for-client__title">Для кого:</p>
+
+        <div class="for-client__img-wrap">
+          <img src="<?php echo THEME_URL; ?>/images/content/for-client-2.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="col-xl-8">
+
+        <p class="for-client__title for-client__title--short">Декларация ДВОС содержит информацию:</p>
+
+        <div class="for-client__wrap">
+          <div class="blocks blocks--2">
+            <div class="blocks__item is-active" style="top: 0; z-index: 6;"></div>
+            <div class="blocks__item" style="top: 30px; z-index: 5;"></div>
+            <div class="blocks__item" style="top: 60px; z-index: 4;"></div>
+            <div class="blocks__item" style="top: 90px; z-index: 3;"></div>
+            <div class="blocks__item" style="top: 120px; z-index: 2;"></div>
+            <div class="blocks__item" style="top: 150px; z-index: 1;"></div>
+            <div class="blocks__item" style="top: 180px; z-index: 0;"></div>
+          </div>
+
+          <div class="for-client-slider swiper-container">
+            <div class="swiper-wrapper">
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О видах и объемах производимой продукции (товара)</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>2О реализации природоохранных мероприятий</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Об авариях и инцидентах на предприятии за последние 7 лет, в результате которых возникло негативное воздействие на окружающую среду</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О выбросах загрязняющих веществ в атмосферный воздух</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О сбросах загрязняющих веществ в водоемы</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О массе и объеме образования и размещения отходов</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О программе производственного экологического контроля</p>
+              </div>
+            </div>
+            <div class="swiper-btn-wrap">
+              <div class="swiper-button-prev">
+                <?php hv_the_icon('arrow-left'); ?>
+                Назад
+              </div>
+              <div class="swiper-button-next">
+                Далле
+                <?php hv_the_icon('arrow-right'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+  <div class="download-banner">
+    <img src="<?php echo THEME_URL; ?>/images/general/pdf-red.png" alt="" class="download-banner__icon">
+    <p class="download-banner__text">Нажмите кнопку, чтобы БЕСПЛАТНО  скачать инструкцию</p>
+    <a href="<?php the_field('instruction', 'option'); ?>" class="btn" target="_blank" download>Скачать Инструкцию</a>
+  </div>
+</div>
+
+<section class="info">
+  <div class="container">
+    <h2 class="section-title">Ответственность за отсутствие декларации</h2>
+    <div class="row">
+      <div class="col-xl-4 col-lg-5 col-md-6 offset-lg-1 offset-xl-2">
+        <div class="info-card">
+          <h3 class="info-card__title">Без декларации</h3>
+          <ul class="info-card__list">
+            <li>Штраф 80 000 рублей</li>
+            <li>плата НВОС без декларации: <br>Ежегодно 187 000 рублей</li>
+          </ul>
+
+          <div class="info-card__total">
+            <span>итого:</span>
+            <p>267 000 рублей</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-lg-5 col-md-6">
+        <div class="info-card info-card--green">
+          <h3 class="info-card__title">С декларацией</h3>
+          <ul class="info-card__list">
+            <li>Штраф отсуствует</li>
+            <li>плата НВОС с декларацией: <br>Ежегодно 7 500 рублей</li>
+          </ul>
+
+          <div class="info-card__total">
+            <span>итого:</span>
+            <p>7 500 рублей</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-form banner-form--list">
+      <div class="banner-form__content">
+        <img src="<?php echo THEME_URL; ?>/images/general/doc-2.png" alt="">
+        <h3>Необходимо оформить ДВОС?</h3>
+        <p>Нажмите кнопку что бы бесплатно получить консультацию об услуге и мы расскажем:</p>
+        <ul>
+          <li>Какую документацию необходимо разработать чтобы  оформить ДВОС ?</li>
+          <li>Какие есть подводные камни в оформлении ДВОС?</li>
+          <li>Сколько будет стоить наша услуга по оформлению ДВОС?</li>
+        </ul>
+      </div>
+
+      <div class="banner-form__form">
+        <?php echo do_shortcode('[contact-form-7 id="91" title="Форма консультация"]'); ?>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="for-client">
+  <div class="container">
+    <h2 class="section-title">Программа производственного экологического контроля <br>ПЭК</h2>
+
+    <div class="row">
+
+      <div class="col-xl-4">
+        <p class="for-client__title">Для кого:</p>
+
+        <div class="for-client__img-wrap">
+          <img src="<?php echo THEME_URL; ?>/images/content/for-client-3.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="col-xl-8">
+
+        <p class="for-client__title for-client__title--short">Программа ПЭК содержит информацию:</p>
+
+        <div class="for-client__wrap">
+          <div class="blocks blocks--3">
+            <div class="blocks__item is-active" style="top: 0; z-index: 6;"></div>
+            <div class="blocks__item" style="top: 30px; z-index: 5;"></div>
+            <div class="blocks__item" style="top: 60px; z-index: 4;"></div>
+            <div class="blocks__item" style="top: 90px; z-index: 3;"></div>
+            <div class="blocks__item" style="top: 120px; z-index: 2;"></div>
+            <div class="blocks__item" style="top: 150px; z-index: 1;"></div>
+          </div>
+
+          <div class="for-client-slider swiper-container">
+            <div class="swiper-wrapper">
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Об инвентаризации выбросов загрязняющих веществ в атмосферный воздух</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О сбросов загрязняющих веществ в окружающую среду и их источников</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>Об инвентаризации отходов производства и потребленияи объектов их размещения</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О подразделениях и (или) должностных лицах, отвечающих за производственный экологический контроль</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О собственных и (или) привлекаемых аккредитованных испытательных лабораториях (центрах)</p>
+              </div>
+              <div class="for-client-slider__item swiper-slide">
+                <img src="<?php echo THEME_URL; ?>/images/content/waste-water.svg" width="70" alt="" class="for-client-slider__icon" data-no-lazy="1">
+                <p>О периодичности и методах осуществления производственного экологического контроля, местах отбора проб и методиках (методах) измерений</p>
+              </div>
+            </div>
+            <div class="swiper-btn-wrap">
+              <div class="swiper-button-prev">
+                <?php hv_the_icon('arrow-left'); ?>
+                Назад
+              </div>
+              <div class="swiper-button-next">
+                Далле
+                <?php hv_the_icon('arrow-right'); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+  <div class="download-banner">
+    <img src="<?php echo THEME_URL; ?>/images/general/pdf-blue.png" alt="" class="download-banner__icon">
+    <p class="download-banner__text">Нажмите кнопку, чтобы БЕСПЛАТНО  скачать инструкцию</p>
+    <a href="<?php the_field('instruction', 'option'); ?>" class="btn" target="_blank" download>Скачать Инструкцию</a>
+  </div>
+</div>
+
+<section class="eco-control">
+  <div class="container">
+    <h2 class="section-title">Ответственность за отсутствие программы <br>Производственного Экологического Контроля:</h2>
+    <div class="banner-form banner-form--no-bg">
+      <div class="banner-form__content">
+        <blockquote>
+          <?php hv_the_icon('auction'); ?>
+          <p>Сокрытие, умышленное искажение или несвоевременное сообщение полной и достоверной информации о состоянии окружающей среды и природных ресурсов, об источниках загрязнения окружающей среды и природных ресурсов или иного вредного воздействия на окружающую среду и природные ресурсы</p>
+        </blockquote>
+
+        <div class="banner-form__content-row">
+          <p class="banner-form__content-fine">Штраф <span>80 000</span> рублей</p>
+          <span class="banner-form__content-article">КоАП РФ Статья 8.5.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-form banner-form--list">
+      <div class="banner-form__content">
+        <img src="<?php echo THEME_URL; ?>/images/general/doc-3.png" alt="">
+        <h3>Необходимо оформить программу ПЭК?</h3>
+        <p>Нажмите кнопку что бы бесплатно получить консультацию об услуге и мы расскажем:</p>
+        <ul>
+          <li>Какую документацию необходимо разработать чтобы оформить программу ПЭК?</li>
+          <li>Какие есть подводные камни в разработке програмы ПЭК?</li>
+          <li>Сколько будет стоить наша услуга по разработке программы ПЭК?</li>
+        </ul>
+      </div>
+
+      <div class="banner-form__form">
+        <?php echo do_shortcode('[contact-form-7 id="91" title="Форма консультация"]'); ?>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="we-can">
+  <div class="container">
+    <h2 class="section-title">А еще мы можем…</h2>
+    
+    <div class="we-can__wrap">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="we-can__item">
+            <div class="we-can__icon-wrap">
+              <?php hv_the_icon('paper'); ?>
+            </div>
+            <h3 class="we-can__title">Сдача отчетности</h3>
+            <p>Вы всегда можете обратиться к нам за разовой подготовкой и сдачей отчетности. Все подсчитаем, заполним, проверим и отправим в нужную инстанцию</p>
+            <a href="#" class="btn callback_open" data-title="Сдача отчетности">Подробнее</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="we-can__item">
+            <div class="we-can__icon-wrap">
+              <?php hv_the_icon('plants'); ?>
+            </div>
+            <h3 class="we-can__title">Комплексное экологическое сопровождение</h3>
+            <p>Вы всегда можете обратиться к нам за разовой подготовкой и сдачей отчетности. Все подсчитаем, заполним, проверим и отправим в нужную инстанцию</p>
+            <a href="#" class="btn callback_open" data-title="Комплексное экологическое сопровождение">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="s-advantages">
   <div class="container">

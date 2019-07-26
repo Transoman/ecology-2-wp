@@ -1,0 +1,80 @@
+.info
+  padding-bottom: 30px
+  .banner-form
+    margin-top: 30px
+
+.info-card
+  margin-bottom: 30px
+  padding: 20px 35px
+  border: 5px solid #f7f7f7
+  +r(480)
+    padding: 20px
+  &__title
+    margin-bottom: 15px
+    font-size: 24px
+    font-weight: 500
+    color: $red
+    text-align: center
+    text-transform: uppercase
+  &__list
+    margin: 0
+    padding: 0
+    border-top: 1px solid $border-color
+    border-bottom: 1px solid $border-color
+    list-style: none
+    li
+      position: relative
+      padding: 15px 0 15px 25px
+      border-bottom: 1px solid $border-color
+      font-weight: 500
+      &:last-child
+        border-bottom: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 19px
+        left: 0
+        width: 14px
+        height: 14px
+        background: url(images/general/del.svg) no-repeat center / contain
+  &__total
+    padding: 20px 0 0 25px
+    span
+      font-weight: 500
+    p
+      margin: 0
+      font-size: 20px
+      font-weight: 700
+      color: $red
+  &--green
+    .info-card
+      &__title
+        color: $accent
+      &__list
+        li
+          &::before
+            background-image: url(images/general/accept.svg)
+      &__total
+        p
+          color: $accent
+
+//.big
+  //  &:not(.big--sm)
+  //    +r(767)
+  //      font-size: 20px
+  //  span
+  //    font-size: 24px
+  //    +r(767)
+  //      font-size: 20px
+  //&__left
+  //  +r(992)
+  //    margin-bottom: 30px
+  //&__right
+  //  h3
+  //    font-size: 20px
+  //  p
+  //    margin-bottom: 55px
+  //    +r(992)
+  //      margin-bottom: 30px
+  //  .big
+  //    margin-bottom: 0

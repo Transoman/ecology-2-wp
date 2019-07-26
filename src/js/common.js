@@ -75,6 +75,23 @@ jQuery(document).ready(function($) {
     }
   });
 
+  var clientSlider = new Swiper('.for-client-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  for (var i = 0; i < clientSlider.length; i++) {
+    clientSlider[i].on('slideChange', function() {
+      var currentItem = this.activeIndex;
+      $(this.$el).prev().find('.blocks__item').removeClass('is-active');
+      $(this.$el).prev().find('.blocks__item').eq(currentItem).addClass('is-active');
+    });
+  }
+
   var teamSliderInfo = function() {
     $('.teams-slider__link').click(function(e) {
       e.preventDefault();
@@ -177,8 +194,6 @@ jQuery(document).ready(function($) {
         width: Math.floor((100 / countStep) * currentStep) + '%'
       });
 
-      console.log($(x[n]).find('input[type="radio"]:checked'));
-
       if ($(x[n]).find('input[type="radio"]:checked').length === 0) {
         $('.steps__btn--next').attr('disabled', true);
       }
@@ -223,6 +238,11 @@ jQuery(document).ready(function($) {
     });
 
   };
+
+  $('.callback_open').click(function() {
+    var title = $(this).data('title');
+    $('#callback input[name="serv-name"]').val(title);
+  });
 
   startTest();
 

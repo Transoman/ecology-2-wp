@@ -1,31 +1,4 @@
 
 # BEGIN WebP Express
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  # WebP Realizer: Redirect non-existing webp images to webp-realizer.php, which will locate corresponding jpg/png, convert it, and deliver the webp (if possible) 
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^/?(.+)\.(webp)$ /content/plugins/webp-express/wod/webp-realizer.php [E=DESTINATIONREL:app/content/$0,E=WPCONTENT:app/content,NC,L]
-
-  # Redirect images to webp-on-demand.php (if browser supports webp)
-  RewriteCond %{HTTP_ACCEPT} image/webp
-  RewriteCond %{REQUEST_FILENAME} -f
-  RewriteCond %{QUERY_STRING} (.*)
-  RewriteRule ^/?(.+)\.(jpe?g)$ /content/plugins/webp-express/wod/webp-on-demand.php?%1 [E=REQFN:%{REQUEST_FILENAME},E=WPCONTENT:app/content,NC,L]
-
-  <IfModule mod_headers.c>
-    <IfModule mod_setenvif.c>
-      # Set Vary:Accept header for the image types handled by WebP Express.
-      # The purpose is to make proxies and CDNs aware that the response varies with the Accept header. 
-      SetEnvIf Request_URI "\.(jpe?g)" ADDVARY
-      Header append "Vary" "Accept" env=ADDVARY
-
-    </IfModule>
-  </IfModule>
-
-</IfModule>
-<IfModule mod_mime.c>
-  AddType image/webp .webp
-</IfModule>
-
+# Plugin is deactivated
 # END WebP Express

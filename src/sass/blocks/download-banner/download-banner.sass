@@ -1,0 +1,37 @@
+.download-banner
+  position: relative
+  display: flex
+  align-items: center
+  padding: 34px 30px 34px 300px
+  background: $accent url(images/general/pattern.svg) center / 20% auto
+  border-radius: 12px
+  color: #fff
+  +r(1200)
+    padding-left: 200px
+  +r(992)
+    display: block
+  +r(576)
+    padding: 100px 15px 15px
+    text-align: center
+  &__icon
+    position: absolute
+    top: -50px
+    left: 25px
+    +r(1200)
+      left: 15px
+    +r(992)
+      width: 150px
+      top: 50%
+      transform: translateY(-50%)
+    +r(576)
+      width: 80px
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+  &__text
+    margin: 0
+    font-size: 16px
+    +r(992)
+      margin-bottom: 20px
+  .btn
+    margin-left: auto
